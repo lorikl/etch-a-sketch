@@ -35,7 +35,7 @@ button {
 .gamecube {
     height: 400px;
     width: 400px;
+    display: grid;
     background-color: white;
-    box-shadow: 0px 0px 5px 1px #E0E0E0;
+    box-shadow: 0px 0px 5px 1px #a2a2a2;
 }
-
