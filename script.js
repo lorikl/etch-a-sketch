@@ -1,7 +1,7 @@
 let cube = document.querySelector(".gamecube")
 let clear = document.querySelector(".clear")
 
-let size = prompt("Enter how many squares you want (Max:100)")
+let size = prompt("Enter how many squares you want (Max:100)",16)
 if (size < 100) {
 	makeGrid(size)
 } else {
