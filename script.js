@@ -1,8 +1,12 @@
 let cube = document.querySelector(".gamecube")
-let size = document.querySelector(".input")
 let clear = document.querySelector(".clear")
-let draw = document.querySelector('.draw')
-let eraser = document.querySelector('.eraser')
+
+let size = prompt("Enter how many squares you want (Max:100)")
+if (size < 100) {
+	makeGrid(size)
+} else {
+	alert("not a number under 100! Click Change Grid Size to play!")
+}
 
 function makeGrid(size) {
 	cube.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -13,31 +17,13 @@ function makeGrid(size) {
 		cube.insertAdjacentElement("beforeend", square)
 		square.addEventListener("mouseover", colorGrid)
 		clear.addEventListener("click", eraser)
-        function eraser() {
-            square.style.backgroundColor = "white"
-        }
+		function eraser() {
+			square.style.backgroundColor = "white"
+		}
 	}
 }
 
-let color = true
-
-function setBlack() {
-    color = true
+function colorGrid(e) {
+	e.target.style.backgroundColor = "black"
 }
 
-function setWhite() {
-    color = false
-}
-
-draw.onclick = () => setBlack
-eraser.onclick = () => setWhite
-
-function colorGrid(e, color) {
-    if (color = true){
-        e.target.style.backgroundColor = 'black'
-    } else if ( color = 2){
-        e.target.style.backgroundColor = 'white'
-    } 
-}
-console.log(color)
-size.value ? makeGrid(size.value) : makeGrid(16)
